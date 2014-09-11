@@ -192,6 +192,31 @@ RSpec.feature "Translations", :js do
     end
   end
 
+  context "shipping methods" do
+    given(:shipping_category) { create(:shipping_category) }
+    given!(:shipping_method) { create(:shipping_method, shipping_categories:[shipping_category]) }
+
+    scenario 'saves translated attributes properly' do
+      visit spree.admin_translations_path('shipping_methods', shipping_method.id)
+
+      within("#attr_fields .name.en") { fill_in_name "Urgent elivery" }
+      within("#attr_fields .name.pt-BR") { fill_in_name "Entrega urgente" }
+      click_on "Update"
+
+      visit spree.admin_shipping_methods_path(locale: 'pt-BR')
+      expect(page).to have_text_like 'Entrega urgente'
+    end
+
+    it "render edit route properly" do
+      visit spree.admin_shipping_methods_path
+      within_row(1) { click_icon :translate }
+      click_on 'Cancel'
+
+      expect(page).to have_css('.content-header')
+    end
+  end
+
+
   context "localization settings" do
     given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'de') }
     given(:french) { Spree.t(:this_file_language, scope: 'i18n', locale: 'fr') }
