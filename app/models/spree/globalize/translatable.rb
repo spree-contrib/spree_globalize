@@ -22,6 +22,7 @@ module Spree
 
           super(params, options)
         end
+        alias :search :ransack unless respond_to? :search
       end
     end
   end
