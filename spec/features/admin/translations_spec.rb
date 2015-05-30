@@ -193,36 +193,29 @@ RSpec.feature "Translations", :js do
   end
 
   context "shipping methods" do
-    given(:language) { Spree.t(:'i18n.this_file_language', locale: :es) }
     given(:shipping_category) { create(:shipping_category) }
     given!(:shipping_method) { create(:shipping_method, shipping_categories:[shipping_category]) }
 
-    background do
-      reset_spree_preferences
-      SpreeI18n::Config.available_locales = [:en, :es]
-      SpreeI18n::Config.supported_locales = [:en, :es]
-    end
-
     scenario 'saves translated attributes properly' do
-      visit spree.admin_shipping_methods_path
-      find('.fa-flag').click
+      visit spree.admin_translations_path('shipping_methods', shipping_method.id)
 
-      within("#attr_fields .name.en.odd") { fill_in_name "Urgent elivery" }
-      within("#attr_fields .name.es.odd") { fill_in_name "Envío urgente" }
+      within("#attr_fields .name.en") { fill_in_name "Urgent elivery" }
+      within("#attr_fields .name.pt-BR") { fill_in_name "Entrega urgente" }
       click_on "Update"
 
-      change_locale
-      visit spree.admin_shipping_methods_path
-      expect(page).to have_content('Envío urgente')
+      visit spree.admin_shipping_methods_path(locale: 'pt-BR')
+      expect(page).to have_text_like 'Entrega urgente'
     end
 
     it "render edit route properly" do
       visit spree.admin_shipping_methods_path
-      find('.fa-flag').click
-      find('.fa-remove').click
-      expect(page).to have_css('.page-title')
+      within_row(1) { click_icon :translate }
+      click_on 'Cancel'
+
+      expect(page).to have_css('.content-header')
     end
   end
+
 
   context "localization settings" do
     given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'de') }
