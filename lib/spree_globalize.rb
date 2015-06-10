@@ -1,0 +1,5 @@
+require 'sass/rails'
+require 'spree_i18n'
+require 'spree/globalize/engine'
+require 'spree/globalize/version'
+require 'coffee_script'

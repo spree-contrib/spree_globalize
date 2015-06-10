@@ -1,14 +1,14 @@
-RSpec.feature "Translations", :js do
+RSpec.feature "Translations" do
   stub_authorization!
 
-  given(:language) { Spree.t(:'i18n.this_file_language', locale: 'pt-BR') }
+  given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'pt-BR') }
   given!(:store) { create(:store) }
 
   background do
     create(:store)
     reset_spree_preferences
     SpreeI18n::Config.available_locales = [:en, :'pt-BR']
-    SpreeI18n::Config.supported_locales = [:en, :'pt-BR']
+    Spree::Globalize::Config.supported_locales = [:en, :'pt-BR']
   end
 
   context "products" do
@@ -193,8 +193,8 @@ RSpec.feature "Translations", :js do
   end
 
   context "localization settings" do
-    given(:language) { Spree.t(:'i18n.this_file_language', locale: 'de') }
-    given(:french) { Spree.t(:'i18n.this_file_language', locale: 'fr') }
+    given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'de') }
+    given(:french) { Spree.t(:this_file_language, scope: 'i18n', locale: 'fr') }
 
     background do
       create(:store)
@@ -202,26 +202,20 @@ RSpec.feature "Translations", :js do
       visit spree.edit_admin_general_settings_path
     end
 
-    scenario "adds german to supported locales and pick it on front end" do
+    scenario "adds german to supported locales" do
       targetted_select2_search(language, from: '#s2id_supported_locales_')
       click_on 'Update'
-      expect(SpreeI18n::Config.supported_locales).to include(:de)
-    end
-
-    scenario "adds spanish to available locales" do
-      targetted_select2_search(french, from: '#s2id_available_locales_')
-      click_on 'Update'
-      expect(SpreeI18n::Config.available_locales).to include(:fr)
+      expect(Spree::Globalize::Config.supported_locales).to include(:de)
     end
   end
 
   context "permalink routing" do
-    given(:language) { Spree.t(:'i18n.this_file_language', locale: 'de') }
+    given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'de') }
     given(:product) { create(:product) }
 
     scenario "finds the right product with permalink in a not active language" do
       SpreeI18n::Config.available_locales = [:en, :de]
-      SpreeI18n::Config.supported_locales = [:en, :de]
+      Spree::Globalize::Config.supported_locales = [:en, :de]
 
       visit spree.admin_product_path(product)
       click_on "Translations"

@@ -1,6 +1,6 @@
 # Contributing
 
-Spree i18n is an open source project and we encourage contributions. Please see the [contributors guidelines](http://spreecommerce.com/documentation/contributing_to_spree.html) for more information before contributing.
+Spree globalize is an open source project and we encourage contributions. Please see the [contributors guidelines](http://spreecommerce.com/documentation/contributing_to_spree.html) for more information before contributing.
 
 In the spirit of [free software][1], **everyone** is encouraged to help improve this project.
 
@@ -77,5 +77,5 @@ Some things that will increase the chance that your pull request is accepted, ta
 And in case we didn't emphasize it enough: **we love tests!**
 
 [1]: http://www.fsf.org/licensing/essays/free-sw.html
-[2]: https://github.com/spree-contrib/spree_i18n/issues
-[3]: https://github.com/spree-contrib/spree_i18n/tree/master/config/locales
+[2]: https://github.com/spree-contrib/spree_globalize/issues
+[3]: https://github.com/spree-contrib/spree_globalize/tree/master/config/locales

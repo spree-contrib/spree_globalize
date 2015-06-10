@@ -5,7 +5,7 @@ module Spree
 
     friendly_id :slug_candidates, use: [:history, :globalize]
 
-    include SpreeI18n::Translatable
+    include Spree::Globalize::Translatable
 
     translation_class.class_eval do
       # Paranoia soft-deletes the associated records only if they are paranoid themselves.

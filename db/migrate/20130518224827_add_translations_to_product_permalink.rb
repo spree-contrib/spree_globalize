@@ -5,7 +5,10 @@ class AddTranslationsToProductPermalink < ActiveRecord::Migration
     else
       fields = { slug: :string }
     end
-    Spree::Product.add_translation_fields!(fields, { migrate_data: true })
+
+    unless column_exists?(:spree_product_translations, fields.keys.first)
+      Spree::Product.add_translation_fields!(fields, { migrate_data: true })
+    end
   end
 
   def down

@@ -1,3 +1,3 @@
 Spree::BaseController.class_eval do
-  include SpreeI18n::ControllerLocaleHelper
+  include Spree::Globalize::ControllerGlobalizeHelper
 end

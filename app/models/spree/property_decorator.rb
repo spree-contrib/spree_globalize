@@ -1,6 +1,6 @@
 module Spree
   Property.class_eval do
     translates :name, :presentation, fallbacks_for_empty_translations: true
-    include SpreeI18n::Translatable
+    include Spree::Globalize::Translatable
   end
 end

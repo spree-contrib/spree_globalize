@@ -1,7 +1,9 @@
 class AddTranslationsToProductProperties < ActiveRecord::Migration
   def up
-    params = { value: :string }
-    Spree::ProductProperty.create_translation_table!(params, { migrate_data: true })
+    unless table_exists?(:spree_product_property_translations)
+      params = { value: :string }
+      Spree::ProductProperty.create_translation_table!(params, { migrate_data: true })
+    end
   end
 
   def down

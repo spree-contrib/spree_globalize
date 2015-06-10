@@ -22,7 +22,6 @@ display_locale_fields = () ->
   if $('#attr_fields .panel:visible').length == 0 and show != 'all'
     $('#attr_fields .no-translations').show()
 
-
 $ ->
   $('#attr_list a').click ->
     $('#attr_list a').removeClass('active')
@@ -31,10 +30,10 @@ $ ->
     display_locale_fields()
     false
 
-  $('#locale, #supported_locales_, #available_locales_').select2({placeholder: 'Please select a language.'})
+  $('#locale, #supported_locales_').select2({placeholder: Spree.translations['please_choose_language']})
+
   $('#locale').change ->
     display_locale_fields()
 
   $("select[name='show-only']").change ->
     display_locale_fields()
-
