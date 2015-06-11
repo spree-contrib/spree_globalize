@@ -1,4 +1,4 @@
-RSpec.feature "Translations" do
+RSpec.feature "Translations", :js do
   stub_authorization!
 
   given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'pt-BR') }
