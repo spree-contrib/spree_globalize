@@ -3,14 +3,6 @@
 [![Build Status](https://travis-ci.org/spree-contrib/spree_globalize.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_globalize)
 [![Code Climate](https://codeclimate.com/github/spree-contrib/spree_globalize/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_globalize)
 
-**A WORD OF WARNING**
-
-**This project is currently under heavy development and not meant to be used on production system**
-
-**Please feel free to test and contribute, though**
-
-**YOU HAVE BEEN WARNED**
-
 This is the globalization project extracted from `spree_i18n` for [Spree Commerce][1]
 
 See the [official Internationalization documentation][2] for more details.
