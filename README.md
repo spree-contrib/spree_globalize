@@ -46,7 +46,7 @@ vendor/assets/stylesheets/spree/frontend/all.css
 This feature uses the [Globalize][3] gem to localize model data.
 So far the following models are translatable:
 
-    Product, Promotion, OptionType, Taxonomy, Taxon and Property.
+    Product, Promotion, OptionType, Taxonomy, Taxon, Property and ShippingMethod.
 
 Start your server and you should see a TRANSLATIONS link or a flag icon on each
 admin section that supports this feature.
