@@ -24,7 +24,7 @@ Run `bundle install`
 You can use the generator to install migrations and append spree_globalize assets to
 your app spree manifest file.
 
-    rails g spree_globalize:install
+    rails g spree:globalize:install
 
 This will insert these lines into your spree manifest files:
 
