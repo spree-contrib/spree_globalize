@@ -2,6 +2,8 @@
   <%= Spree.t(:editing_resource, resource: Spree::Store.model_name.human) %>
 <% end %>
 
+<%= render 'settings' %>
+
 <div class="row translations">
   <div class="col-md-4">
     <%= render 'fields' %>
