@@ -10,6 +10,7 @@ module Spree
 
       class_methods do
         def ransack(params = {}, options = {})
+          params ||= {} 
           names = params.keys
 
           names.each do |n|
