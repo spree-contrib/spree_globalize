@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.org/spree-contrib/spree_globalize.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_globalize)
 [![Code Climate](https://codeclimate.com/github/spree-contrib/spree_globalize/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_globalize)
 
-This is the globalization project extracted from `spree_i18n` for [Spree Commerce][1]
+This is the globalization project extracted from `spree_i18n` for [Spree Commerce][1] version 3.1+.
+
+For previous Spree versions you can just use [spree_i18n][2].
 
 See the [official Internationalization documentation][2] for more details.
 
@@ -86,3 +88,5 @@ Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. re
 [5]: https://github.com/spree-contrib/spree_globalize/graphs/contributors
 [6]: https://github.com/spree-contrib/spree_globalize/blob/master/LICENSE.md
 [7]: https://github.com/spree-contrib/spree_globalize/blob/master/CONTRIBUTING.md
+[8]: https://github.com/spree-contrib/spree_i18n
+
