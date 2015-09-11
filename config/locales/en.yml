@@ -1,0 +1,4 @@
+en:
+  spree:
+    globalize:
+      no_translations_for_criteria: There are no translations for given criteria

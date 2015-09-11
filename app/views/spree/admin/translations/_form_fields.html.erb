@@ -4,17 +4,19 @@
       <% @resource.class.translated_attribute_names.each_with_index do |attr, i| %>
         <div class="panel panel-default <%= attr %> <%= locale %>" style="display:<%= i == 0 ? 'auto' : 'none' %>;">
           <div class="panel-heading">
-            <%= Spree.t(attr, locale: locale) %>
+            <% I18n.with_locale(locale) do %>
+              <%= @resource.class.human_attribute_name(attr) %>
 
-            <div class="pull-right text-muted">
-              <small><i><%= Spree.t(:'i18n.this_file_language', locale: locale) %></i></small>
+              <div class="pull-right text-muted">
+                <small><i><%= Spree.t(:'i18n.this_file_language') %></i></small>
 
-              <% if locale.to_s.include?('-') %>
-                <img src="https://www.localeapp.com/assets/flags/regions/<%= locale.to_s.split('-').last %>.png">
-              <% else %>
-                <img src="https://www.localeapp.com/assets/flags/languages/<%= locale %>.png">
-              <% end %>
-            </div>
+                <% if locale.to_s.include?('-') %>
+                  <img src="https://www.localeapp.com/assets/flags/regions/<%= locale.to_s.split('-').last %>.png">
+                <% else %>
+                  <img src="https://www.localeapp.com/assets/flags/languages/<%= locale %>.png">
+                <% end %>
+              </div>
+            <% end %>
           </div>
 
           <div class="panel-body">
@@ -29,7 +31,9 @@
     <% end %>
   <% end %>
 
-  <p class="no-translations" style="display: none">There are no translations for given criteria</p>
+  <p class="no-translations" style="display: none">
+    <%= Spree.t(:'globalize.no_translations_for_criteria') %>
+  </p>
 </div>
 
 <hr/>
