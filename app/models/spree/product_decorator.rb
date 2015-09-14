@@ -31,13 +31,12 @@ module Spree
     # Allow to filter products through their translations, too
     def self.like_any(fields, values)
       translations = Spree::Product::Translation.arel_table
+      source = fields.product(values, [translations, arel_table])
+      clauses = source.map do |(field, value, arel)|
+        arel[field].matches("%#{value}%")
+      end.inject(:or)
 
-      joins(:translations).where(fields.map { |field|
-        values.map { |value|
-          translations[field].matches("%#{value}%").        # extension: match with translations under current locale
-            or(arel_table[field].matches("%#{value}%"))     # compatible with original behaviour
-        }.inject(:or)
-      }.inject(:or).and(translations[:locale].eq(I18n.locale)))
+      joins(:translations).where(translations[:locale].eq(I18n.locale)).where(clauses)
     end
 
     def duplicate_extra(old_product)
