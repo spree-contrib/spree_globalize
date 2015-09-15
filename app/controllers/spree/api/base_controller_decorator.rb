@@ -1,3 +1,3 @@
 Spree::Api::BaseController.class_eval do
-  include Spree::Globalize::ControllerGlobalizeHelper
+  include SpreeGlobalize::ControllerGlobalizeHelper
 end

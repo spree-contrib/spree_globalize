@@ -2,12 +2,12 @@
 lib = File.expand_path('../lib/', __FILE__)
 $LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 
-require 'spree/globalize/version'
+require 'spree_globalize/version'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_globalize'
-  s.version     = Spree::Globalize.version
+  s.version     = SpreeGlobalize.version
   s.summary     = 'Provides globalization features for Spreecommerce.'
   s.description = s.summary
 

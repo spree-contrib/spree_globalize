@@ -3,7 +3,7 @@ module Spree
     before_action :load_parent
 
     helper 'spree_i18n/locale'
-    helper 'spree/globalize/locale'
+    helper 'spree_globalize/locale'
 
     helper_method :collection_url
 
