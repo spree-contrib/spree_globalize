@@ -1,0 +1,12 @@
+<!-- insert_top '[data-hook="localization_settings_body"]'
+     sequence :after => "localization_settings"
+-->
+<div class="form-group">
+  <label for="supported_locales_">
+    <%= Spree.t(:'i18n.supported_locales') %>
+  </label>
+  <%= select_supported_locales %>
+  <p class="help-block">
+    <%= Spree.t(:'i18n.locales_displayed_on_frontend_select_box') %>
+  </p>
+</div>
