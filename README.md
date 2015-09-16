@@ -53,13 +53,13 @@ So far the following models are translatable:
 Start your server and you should see a TRANSLATIONS link or a flag icon on each
 admin section that supports this feature.
 
-The extension contains two configs that allow users to customize which locales
+There are two configs that allow users to customize which locales
 should be displayed as options on the translation forms and which should be
 listed to customers on the frontend. You can set them on an initializer. e.g.
 
 ```ruby
-SpreeI18n::Config.available_locales = [:en, :es, :'pt-BR'] # displayed on translation forms
-SpreeGlobalize::Config.supported_locales = [:en, :'pt-BR'] # displayed on frontend select box
+SpreeI18n::Config.available_locales = [:en, :es, :'pt-BR'] # displayed on frontend select box
+SpreeGlobalize::Config.supported_locales = [:en, :'pt-BR'] # displayed on translation forms
 ```
 
 NOTE for early adopters: `Spree::Globalize` namespace is now `SpreeGlobalize`
