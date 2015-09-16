@@ -59,8 +59,10 @@ listed to customers on the frontend. You can set them on an initializer. e.g.
 
 ```ruby
 SpreeI18n::Config.available_locales = [:en, :es, :'pt-BR'] # displayed on translation forms
-Spree::Globalize::Config.supported_locales = [:en, :'pt-BR'] # displayed on frontend select box
+SpreeGlobalize::Config.supported_locales = [:en, :'pt-BR'] # displayed on frontend select box
 ```
+
+NOTE for early adopters: `Spree::Globalize` namespace is now `SpreeGlobalize`
 
 PS. Please use symbols, not strings. e.g. `:'pt-BR'` not just `'pt-BR'`. Otherwise
 you may get unexpected errors
@@ -89,4 +91,3 @@ Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. re
 [6]: https://github.com/spree-contrib/spree_globalize/blob/master/LICENSE.md
 [7]: https://github.com/spree-contrib/spree_globalize/blob/master/CONTRIBUTING.md
 [8]: https://github.com/spree-contrib/spree_i18n
-
