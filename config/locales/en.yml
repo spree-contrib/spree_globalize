@@ -1,5 +1,6 @@
 en:
   spree:
     globalize:
+      locales_displayed_on_translation_forms: Locales displayed on translation forms
       no_translations_for_criteria: There are no translations for given criteria
       store_translations: Store Translations

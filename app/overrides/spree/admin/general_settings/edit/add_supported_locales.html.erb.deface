@@ -7,6 +7,6 @@
   </label>
   <%= select_supported_locales %>
   <p class="help-block">
-    <%= Spree.t(:'i18n.locales_displayed_on_frontend_select_box') %>
+    <%= Spree.t(:'globalize.locales_displayed_on_translation_forms') %>
   </p>
 </div>
