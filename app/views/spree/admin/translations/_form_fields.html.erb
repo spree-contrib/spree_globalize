@@ -10,11 +10,14 @@
               <div class="pull-right text-muted">
                 <small><i><%= Spree.t(:'i18n.this_file_language') %></i></small>
 
-                <% if locale.to_s.include?('-') %>
-                  <img src="https://www.localeapp.com/assets/flags/regions/<%= locale.to_s.split('-').last %>.png">
-                <% else %>
-                  <img src="https://www.localeapp.com/assets/flags/languages/<%= locale %>.png">
-                <% end %>
+                <% if false %> <%# Start comment out %>
+                  <%# localeapp.com icons don't work anymore %>
+                  <% if locale.to_s.include?('-') %>
+                    <img src="https://www.localeapp.com/assets/flags/regions/<%= locale.to_s.split('-').last %>.png">
+                  <% else %>
+                    <img src="https://www.localeapp.com/assets/flags/languages/<%= locale %>.png">
+                  <% end %>
+                <% end %> <%# End comment out %>
               </div>
             <% end %>
           </div>
