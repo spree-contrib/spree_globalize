@@ -20,11 +20,16 @@
           </div>
 
           <div class="panel-body">
-            <% if @resource.class.columns_hash[attr.to_s].type == :text %>
+            <% field_type = @resource.class.translation_class.columns_hash[attr.to_s].type %>
+            <% if field_type == :text %>
               <%= g.text_area attr, class: 'form-control', rows: 4 %>
             <% else %>
               <%= g.text_field attr, class: 'form-control' %>
             <% end %>
+
+
+
+
           </div>
         </div>
       <% end %>
