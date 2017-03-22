@@ -1,0 +1,6 @@
+bg:
+  spree:
+    globalize:
+      locales_displayed_on_translation_forms: Преводи показани на формите
+      no_translations_for_criteria: Няма преводи по зададената критерия
+      store_translations: Преводи
