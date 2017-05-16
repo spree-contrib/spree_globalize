@@ -20,7 +20,7 @@
           </div>
 
           <div class="panel-body">
-            <% if @resource.class.columns_hash[attr.to_s].type == :text %>
+			<% if @resource.class.columns_hash[attr.to_s].try(:type) == :text %>
               <%= g.text_area attr, class: 'form-control', rows: 4 %>
             <% else %>
               <%= g.text_field attr, class: 'form-control' %>
