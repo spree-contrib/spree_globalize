@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
 
   s.add_runtime_dependency 'friendly_id-globalize'
-  s.add_runtime_dependency 'globalize', '~> 5.0.1'
+  s.add_runtime_dependency 'globalize', '5.1.0.beta1'
   s.add_runtime_dependency 'spree_i18n', '~> 3.2.0.alpha'
 
   s.add_development_dependency 'byebug'
