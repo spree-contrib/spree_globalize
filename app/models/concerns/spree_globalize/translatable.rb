@@ -12,6 +12,7 @@ module SpreeGlobalize
 
     class_methods do
       def ransack(params = {}, options = {})
+              
         params ||= {}
         names = params.keys
 
