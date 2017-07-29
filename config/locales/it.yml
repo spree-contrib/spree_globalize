@@ -1,0 +1,6 @@
+it:
+  spree:
+    globalize:
+      locales_displayed_on_translation_forms: Lingue visualizzate nei form di traduzione
+      no_translations_for_criteria: Non ci sono traduzioni per i criteri selezionati
+      store_translations: Traduzioni per lo Store
