@@ -2,6 +2,8 @@ module SpreeGlobalize
   module Translatable
     extend ActiveSupport::Concern
 
+    include Spree::RansackableAttributes
+
     included do |klass|
       accepts_nested_attributes_for :translations
       klass.whitelisted_ransackable_associations ||= []
@@ -10,6 +12,7 @@ module SpreeGlobalize
 
     class_methods do
       def ransack(params = {}, options = {})
+              
         params ||= {}
         names = params.keys
 
