@@ -1,4 +1,4 @@
-class AddTranslationsToProductPermalink < ActiveRecord::Migration
+class AddTranslationsToProductPermalink < SpreeExtension::Migration[4.2]
   def up
     if column_exists?(:spree_products, :permalink)
       fields = { permalink: :string }

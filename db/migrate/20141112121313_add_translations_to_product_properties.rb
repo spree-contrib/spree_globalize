@@ -1,4 +1,4 @@
-class AddTranslationsToProductProperties < ActiveRecord::Migration
+class AddTranslationsToProductProperties < SpreeExtension::Migration[4.2]
   def up
     unless table_exists?(:spree_product_property_translations)
       params = { value: :string }
