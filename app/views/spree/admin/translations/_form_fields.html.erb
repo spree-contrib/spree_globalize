@@ -10,21 +10,29 @@
               <div class="pull-right text-muted">
                 <small><i><%= Spree.t(:'i18n.this_file_language') %></i></small>
 
-                <% if locale.to_s.include?('-') %>
-                  <img src="https://www.localeapp.com/assets/flags/regions/<%= locale.to_s.split('-').last %>.png">
-                <% else %>
-                  <img src="https://www.localeapp.com/assets/flags/languages/<%= locale %>.png">
-                <% end %>
+                <% if false %> <%# Start comment out %>
+                  <%# localeapp.com icons don't work anymore %>
+                  <% if locale.to_s.include?('-') %>
+                    <img src="https://www.localeapp.com/assets/flags/regions/<%= locale.to_s.split('-').last %>.png">
+                  <% else %>
+                    <img src="https://www.localeapp.com/assets/flags/languages/<%= locale %>.png">
+                  <% end %>
+                <% end %> <%# End comment out %>
               </div>
             <% end %>
           </div>
 
           <div class="panel-body">
-            <% if @resource.class.columns_hash[attr.to_s].type == :text %>
+            <% field_type = @resource.class.translation_class.columns_hash[attr.to_s].type %>
+            <% if field_type == :text %>
               <%= g.text_area attr, class: 'form-control', rows: 4 %>
             <% else %>
               <%= g.text_field attr, class: 'form-control' %>
             <% end %>
+
+
+
+
           </div>
         </div>
       <% end %>
