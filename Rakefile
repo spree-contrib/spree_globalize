@@ -5,7 +5,6 @@ require 'rake/packagetask'
 require 'rubygems/package_task'
 require 'rspec/core/rake_task'
 require 'spree/testing_support/common_rake'
-require 'spree_globalize'
 
 Bundler::GemHelper.install_tasks
 RSpec::Core::RakeTask.new

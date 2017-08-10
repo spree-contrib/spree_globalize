@@ -6,7 +6,7 @@ module SpreeGlobalize
     extend ActiveSupport::Concern
 
     included do
-      prepend_before_filter :globalize_fallbacks
+      prepend_before_action :globalize_fallbacks
 
       private
 
