@@ -1,4 +1,5 @@
 require 'spree_i18n'
 require 'spree_globalize/engine'
 require 'spree_globalize/version'
+require 'spree_globalize/fallbacks'
 require 'coffee_script'
