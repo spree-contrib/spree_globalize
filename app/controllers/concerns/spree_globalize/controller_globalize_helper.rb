@@ -11,7 +11,7 @@ module SpreeGlobalize
       private
 
       def globalize_fallbacks
-        Fallbacks.config!
+        SpreeGlobalize::Fallbacks.config!
       end
     end
   end
