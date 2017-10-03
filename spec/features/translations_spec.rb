@@ -10,10 +10,14 @@ RSpec.feature "Translations" do
     let!(:product) do
       create(:product,
         name: 'Antimatter',
+        meta_title: 'Antimatter meta_title',
+        meta_description: 'Antimatter meta_description',
         translations: [
           Spree::Product::Translation.new(
             locale: 'pt-BR',
-            name: 'Antimatéria'
+            name: 'Antimatéria',
+            meta_title: 'Antimatéria meta_title',
+            meta_description: 'Antimatéria meta_description'
           )
         ]
       )
