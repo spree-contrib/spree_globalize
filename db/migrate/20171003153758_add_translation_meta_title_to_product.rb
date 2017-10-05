@@ -1,4 +1,4 @@
-class AddTranslationMetaTitleToProduct < ActiveRecord::Migration[4.2]
+class AddTranslationMetaTitleToProduct < SpreeExtension::Migration[4.2]
   def change
     reversible do |dir|
       dir.up do
