@@ -84,8 +84,8 @@ translations that do not exist.*
 
 Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. released under the [New BSD License][6]
 
-[1]: http://spreecommerce.com
-[2]: http://guides.spreecommerce.com/developer/i18n.html
+[1]: http://spreecommerce.org
+[2]: http://guides.spreecommerce.org/developer/i18n.html
 [3]: https://github.com/globalize/globalize
 [5]: https://github.com/spree-contrib/spree_globalize/graphs/contributors
 [6]: https://github.com/spree-contrib/spree_globalize/blob/master/LICENSE.md
