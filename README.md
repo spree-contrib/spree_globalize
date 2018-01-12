@@ -18,6 +18,7 @@ Happy translating!
 Add the following to your `Gemfile`:
 
 ```ruby
+gem 'globalize', github: 'globalize/globalize'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
 ```
 
