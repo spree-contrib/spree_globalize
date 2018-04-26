@@ -18,7 +18,8 @@ Happy translating!
 Add the following to your `Gemfile`:
 
 ```ruby
-gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 ```
 
 Run `bundle install`
@@ -37,8 +38,8 @@ vendor/assets/javascripts/spree/backend/all.js
 vendor/assets/javascripts/spree/frontend/all.js
 //= require spree/frontend/spree_globalize
 
-vendor/assets/stylesheets/spree/frontend/all.css
-*= require spree/frontend/spree_globalize
+vendor/assets/stylesheets/spree/backend/all.css
+*= require spree/backend/spree_globalize
 ```
 
 ---
@@ -59,7 +60,7 @@ listed to customers on the frontend. You can set them on an initializer. e.g.
 
 ```ruby
 SpreeI18n::Config.available_locales = [:en, :es, :'pt-BR'] # displayed on frontend select box
-SpreeGlobalize::Config.supported_locales = [:en, :'pt-BR'] # displayed on translation forms
+SpreeGlobalize::Config.supported_locales = [:en, :es, :'pt-BR'] # displayed on translation forms
 ```
 
 NOTE for early adopters: `Spree::Globalize` namespace is now `SpreeGlobalize`
