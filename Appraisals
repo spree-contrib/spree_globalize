@@ -3,13 +3,13 @@ appraise 'spree-3-2' do
   gem 'rails-controller-testing'
 end
 
-appraise 'spree-3-3' do
-  gem 'spree', '~> 3.3.0'
+appraise 'spree-3-5' do
+  gem 'spree', '~> 3.5.0'
   gem 'rails-controller-testing'
 end
 
-appraise 'spree-3-4' do
-  gem 'spree', '~> 3.4.0'
+appraise 'spree-3-6' do
+  gem 'spree', '~> 3.6.2'
   gem 'rails-controller-testing'
 end
 
