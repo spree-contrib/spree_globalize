@@ -43,6 +43,10 @@ module Spree
       duplicate_translations(old_product)
     end
 
+    def property(property_name)
+      product_properties.joins(:property).find_by(spree_properties: { id: Spree::Property.find_by(name: property_name) }).try(:value)
+    end
+
     private
 
     def duplicate_translations(old_product)
