@@ -12,9 +12,8 @@ env:
 language: ruby
 
 rvm:
-  - 2.4.4
-  - 2.3.1
-  - 2.2.7
+  - 2.5.3
+  - 2.4.5
 
 matrix:
     allow_failures:
@@ -23,7 +22,8 @@ matrix:
 gemfile:
   - gemfiles/spree_3_2.gemfile
   - gemfiles/spree_3_3.gemfile
-  - gemfiles/spree_3_4.gemfile
+  - gemfiles/spree_3_5.gemfile
+  - gemfiles/spree_3_6.gemfile
   - gemfiles/spree_master.gemfile
 
 before_install:
