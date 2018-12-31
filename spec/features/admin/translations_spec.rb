@@ -177,19 +177,6 @@ RSpec.feature "Translations", :js do
     end
   end
 
-  context "store" do
-    scenario 'saves translated attributes properly' do
-      visit spree.admin_translations_path('stores', store)
-
-      within("#attr_fields .name.pt-BR") { fill_in_name "nome store" }
-      click_on "Update"
-
-      visit spree.admin_translations_path('stores', store)
-
-      expect(page).to have_selector("input[value='nome store']")
-    end
-  end
-
   context "shipping methods" do
     given(:shipping_category) { create(:shipping_category) }
     given!(:shipping_method) { create(:shipping_method, shipping_categories:[shipping_category]) }
