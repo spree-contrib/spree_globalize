@@ -5,7 +5,6 @@ module SpreeGlobalize
 
       def add_javascripts
         append_file "vendor/assets/javascripts/spree/backend/all.js", "//= require spree/backend/spree_globalize\n"
-        append_file "vendor/assets/javascripts/spree/frontend/all.js", "//= require spree/frontend/spree_globalize\n"
 			end
 
       def add_stylesheets
