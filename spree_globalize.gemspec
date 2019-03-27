@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'i18n_data'
   s.add_runtime_dependency 'rails-i18n'
   s.add_runtime_dependency 'kaminari-i18n'
-  s.add_runtime_dependency 'spree_core', '>= 3.1.0', '< 4.0'
+  s.add_runtime_dependency 'spree_core', '>= 3.1.0', '< 5.0'
   s.add_runtime_dependency 'spree_extension'
 
   s.add_development_dependency 'appraisal'
@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'sass-rails'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'sqlite3', '~> 1.3.6'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'sprockets-rails'
