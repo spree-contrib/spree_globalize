@@ -9,7 +9,7 @@ appraise 'spree-3-5' do
 end
 
 appraise 'spree-3-7' do
-  gem 'spree', '~> 3.7.0.rc3'
+  gem 'spree', '~> 3.7.0'
 end
 
 appraise 'spree-master' do
