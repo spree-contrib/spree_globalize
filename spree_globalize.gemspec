@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
+  s.add_runtime_dependency 'deface', '~> 1.0'
   s.add_runtime_dependency 'friendly_id-globalize'
   s.add_runtime_dependency 'globalize'
   s.add_runtime_dependency 'spree_i18n'
