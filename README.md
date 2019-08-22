@@ -35,9 +35,6 @@ This will insert these lines into your spree manifest files:
 vendor/assets/javascripts/spree/backend/all.js
 //= require spree/backend/spree_globalize
 
-vendor/assets/javascripts/spree/frontend/all.js
-//= require spree/frontend/spree_globalize
-
 vendor/assets/stylesheets/spree/backend/all.css
 *= require spree/backend/spree_globalize
 ```
