@@ -5,6 +5,7 @@ module SpreeGlobalize
     include Spree::RansackableAttributes
 
     included do |klass|
+      has_many :translations
       accepts_nested_attributes_for :translations
       klass.whitelisted_ransackable_associations ||= []
       klass.whitelisted_ransackable_associations |= ['translations']
