@@ -2,9 +2,10 @@
 
 source "https://rubygems.org"
 
-gem 'spree', "~> 3.7.0"
+gem 'spree', '~> 3.7.0'
 gem 'globalize', github: 'globalize/globalize'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
-gem "sass-rails"
+gem 'sass-rails'
+gem 'globalize' '5.2.0'
 
-gemspec path: "../"
+gemspec path: '../'
