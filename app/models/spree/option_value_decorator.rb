@@ -1,6 +1,9 @@
-module Spree
-  OptionValue.class_eval do
-    translates :name, :presentation, :fallbacks_for_empty_translations => true
-    include SpreeGlobalize::Translatable
+module Spree::OptionValueDecorator
+  def self.prepended(base)
+    base.translates :name, :presentation, :fallbacks_for_empty_translations => true
   end
+
+  Spree::OptionValue.include SpreeGlobalize::Translatable
 end
+
+Spree::OptionValue.prepend Spree::OptionValueDecorator

@@ -1,3 +1,4 @@
-Spree::BaseController.class_eval do
-  include SpreeGlobalize::ControllerGlobalizeHelper
+module Spree::BaseControllerDecorator
+  Spree::BaseController.include(SpreeGlobalize::ControllerGlobalizeHelper)
 end
+Spree::BaseController.prepend(Spree::BaseControllerDecorator)

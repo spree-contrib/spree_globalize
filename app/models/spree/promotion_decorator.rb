@@ -1,6 +1,9 @@
-module Spree
-  Promotion.class_eval do
-    translates :name, :description, fallbacks_for_empty_translations: true
-    include SpreeGlobalize::Translatable
+module Spree::PromotionDecorator
+  def self.prepended(base)
+    base.translates :name, :description, fallbacks_for_empty_translations: true
   end
+
+  Spree::Promotion.include SpreeGlobalize::Translatable
 end
+
+Spree::Promotion.prepend Spree::PromotionDecorator

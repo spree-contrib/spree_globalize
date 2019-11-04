@@ -1,6 +1,9 @@
-module Spree
-  ShippingMethod.class_eval do
-    translates :name, fallbacks_for_empty_translations: true
-    include SpreeGlobalize::Translatable
+module Spree::ShippingMethodDecorator
+  def self.prepended(base)
+    base.translates :name, fallbacks_for_empty_translations: true
   end
+
+  Spree::ShippingMethod.include SpreeGlobalize::Translatable
 end
+
+Spree::ShippingMethod.prepend Spree::ShippingMethodDecorator
