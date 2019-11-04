@@ -6,4 +6,4 @@ module Spree::StoreDecorator
   Spree::Store.include SpreeGlobalize::Translatable
 end
 
-Spree::Store.prepend Spree::StoreDecorator
+::Spree::Store.prepend(Spree::StoreDecorator)

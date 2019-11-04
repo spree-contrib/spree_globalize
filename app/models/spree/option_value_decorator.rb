@@ -6,4 +6,4 @@ module Spree::OptionValueDecorator
   Spree::OptionValue.include SpreeGlobalize::Translatable
 end
 
-Spree::OptionValue.prepend Spree::OptionValueDecorator
+::Spree::OptionValue.prepend(Spree::OptionValueDecorator)

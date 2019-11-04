@@ -7,4 +7,4 @@ module Spree::TaxonDecorator
   Spree::Taxon.include SpreeGlobalize::Translatable
 end
 
-Spree::Taxon.prepend Spree::TaxonDecorator
+::Spree::Taxon.prepend(Spree::TaxonDecorator)

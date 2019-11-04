@@ -17,17 +17,19 @@ module Spree
 
     Spree::Product.include SpreeGlobalize::Translatable
 
-    module Translation
-      def self.prepended(base)
-        base.acts_as_paranoid
-        base.after_destroy :punch_slug
-        Spree::Product::Translation.default_scopes = []
+    # module Translation
+    #   def self.prepended(base)
+    #     base.acts_as_paranoid
+    #     base.after_destroy :punch_slug
+    #     Spree::Product::Translation.default_scopes = []
 
-        def base.punch_slug
-          update(slug: "#{Time.now.to_i}_#{slug}")
-        end
-      end
-    end
+    #     def base.punch_slug
+    #       update(slug: "#{Time.now.to_i}_#{slug}")
+    #     end
+    #   end
+    # end
+
+    # ::Spree::Product::Translation.prepend(Spree::ProductDecorator::Translation)
 
     # Don't punch slug on original product as it prevents bulk deletion.
     # Also we don't need it, as it is translated.
@@ -52,4 +54,4 @@ module Spree
   end
 end
 
-Spree::Product.prepend Spree::ProductDecorator
+::Spree::Product.prepend(Spree::ProductDecorator)

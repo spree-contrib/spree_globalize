@@ -6,4 +6,4 @@ module Spree::PropertyDecorator
   Spree::Property.include SpreeGlobalize::Translatable
 end
 
-Spree::Property.prepend Spree::PropertyDecorator
+::Spree::Property.prepend(Spree::PropertyDecorator)

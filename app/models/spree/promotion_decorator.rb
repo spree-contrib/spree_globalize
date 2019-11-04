@@ -6,4 +6,4 @@ module Spree::PromotionDecorator
   Spree::Promotion.include SpreeGlobalize::Translatable
 end
 
-Spree::Promotion.prepend Spree::PromotionDecorator
+::Spree::Promotion.prepend(Spree::PromotionDecorator)

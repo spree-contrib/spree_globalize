@@ -6,4 +6,4 @@ module Spree::TaxonomyDecorator
   Spree::Taxonomy.include SpreeGlobalize::Translatable
 end
 
-Spree::Taxonomy.prepend Spree::TaxonomyDecorator
+::Spree::Taxonomy.prepend(Spree::TaxonomyDecorator)
