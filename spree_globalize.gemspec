@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'deface', '~> 1.0'
 
   s.add_development_dependency 'appraisal'
+  s.add_development_dependency 'acts_as_paranoid'
   s.add_development_dependency 'byebug'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'capybara-screenshot'

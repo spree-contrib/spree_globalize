@@ -227,7 +227,8 @@ RSpec.feature "Translations", :js do
     end
 
     scenario "adds german to supported locales" do
-      targetted_select2_search(language, from: '#s2id_supported_locales_')
+      find('ul.select2-choices').click
+      find('div.select2-result-label', text: 'Deutsch (DE)').click
       click_on 'Update'
       expect(SpreeGlobalize::Config.supported_locales).to include(:de)
     end
