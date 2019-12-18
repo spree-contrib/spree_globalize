@@ -2,12 +2,12 @@ module Spree
   module Admin
     module GeneralSettingsControllerDecorator
       def self.prepended(base)
-        base.before_action :update_i18n_settings, only: :update
+        base.before_action :update_supported_currencies_settings, only: [:update]
       end
 
       private
 
-      def update_i18n_settings
+      def update_supported_currencies_settings
         params.each do |name, value|
           next unless SpreeGlobalize::Config.has_preference? name
           SpreeGlobalize::Config[name] = value.map(&:to_sym)
