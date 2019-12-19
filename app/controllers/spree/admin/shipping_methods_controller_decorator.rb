@@ -1,13 +1,12 @@
 module Spree
   module Admin
     module ShippingMethodsControllerDecorator
-      private
-
       def self.prepended(base)
         base.alias_method :old_set_shipping_category, :set_shipping_category
         base.alias_method :old_set_zones, :set_zones
       end
 
+      private
       # We have to override those filters since they break proper PATCH behaviour.
 
       def set_shipping_category
