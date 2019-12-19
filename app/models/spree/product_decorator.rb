@@ -4,15 +4,10 @@ module Spree
       base.translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug, fallbacks_for_empty_translations: true
       base.friendly_id :slug_candidates, use: [:history, :globalize]
 
-      base.translation_class.class_eval do |translation|
-        translation.acts_as_paranoid
-        translation.after_destroy :punch_slug
-        translation.default_scopes = []
-
-        def punch_slug
-          update(slug: "#{Time.now.to_i}_#{slug}")
-        end
-      end
+      base.translation_class.acts_as_paranoid
+      base.translation_class.after_destroy :punch_slug
+      base.translation_class.default_scopes = []
+      base.translation_class.define_method(:punch_slug) { update(slug: "#{Time.now.to_i}_#{slug}") }
 
       def base.like_any(fields, values)
         translations = Spree::Product::Translation.arel_table
