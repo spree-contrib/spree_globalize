@@ -2,9 +2,11 @@
 
 source "https://rubygems.org"
 
-gem "spree", "~> 3.5.0"
-gem 'globalize', github: 'globalize/globalize'
+gem 'spree', '~> 3.5.0'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'i18n', '~> 1.0.0'
+gem 'globalize', '5.2.0'
+gem 'sprockets', '3.7.2'
+gem 'coffee-rails'
 
-gemspec path: "../"
+gemspec path: '../'

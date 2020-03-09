@@ -2,9 +2,8 @@
 
 source "https://rubygems.org"
 
-gem "spree", "~> 3.2.0"
+gem 'spree', '~> 4.0.0.rc2'
 gem 'globalize', github: 'globalize/globalize'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
-gem 'i18n', '~> 1.0.0'
 
-gemspec path: "../"
+gemspec path: '../'
