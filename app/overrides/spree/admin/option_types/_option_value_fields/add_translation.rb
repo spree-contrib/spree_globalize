@@ -1,5 +1,5 @@
 Deface::Override.new(
-  virtual_path:  'spree/admin/option_types/option_value_fields',
+  virtual_path:  'spree/admin/option_types/_option_value_fields',
   name:          'option_value_translation',
   insert_bottom: 'td.actions',
   text:           <<-HTML
