@@ -1,0 +1,6 @@
+zh-TW:
+  spree:
+    globalize:
+      locales_displayed_on_translation_forms: 顯示於編輯翻譯欄位的文字
+      no_translations_for_criteria: 目前沒有適合的翻譯
+      store_translations: 商店翻譯
