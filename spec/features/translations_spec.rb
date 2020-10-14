@@ -7,6 +7,7 @@ RSpec.feature "Translations" do
   end
 
   context 'product' do
+    let!(:store) { create(:store) }
     let!(:product) do
       create(:product,
         name: 'Antimatter',
