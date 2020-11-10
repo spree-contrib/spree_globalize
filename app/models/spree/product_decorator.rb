@@ -43,6 +43,7 @@ module Spree
     private
 
     def duplicate_translations(old_product)
+      globalize.reset # Stash contains copied slugs of the product that's being duplicated
       old_product.translations.each do |translation|
         translation.slug = nil # slug must be regenerated
         self.translations << translation.dup
