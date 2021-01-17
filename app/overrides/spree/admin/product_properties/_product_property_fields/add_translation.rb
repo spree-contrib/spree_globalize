@@ -1,5 +1,5 @@
 Deface::Override.new(
-  virtual_path:  'spree/admin/product_properties/product_property_fields',
+  virtual_path:  'spree/admin/product_properties/_product_property_fields',
   name:          'product_property_translation',
   insert_bottom: 'td.actions',
   text:           <<-HTML
