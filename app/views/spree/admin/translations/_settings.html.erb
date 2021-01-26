@@ -15,6 +15,7 @@
 	  	<div class="form-group no-margin-bottom">
 	  		<label><%= Spree.t(:'i18n.select_locale') %></label>
 		  	<%= select_available_locales_fields %>
+				<%= hidden_field_tag 'available_locales', available_locales.join(',') %>
 		  </div>
 	  </div>
 	</div>
