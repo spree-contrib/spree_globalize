@@ -34,9 +34,6 @@ This will insert these lines into your spree manifest files:
 ```
 vendor/assets/javascripts/spree/backend/all.js
 //= require spree/backend/spree_globalize
-
-vendor/assets/stylesheets/spree/backend/all.css
-*= require spree/backend/spree_globalize
 ```
 
 ---
@@ -50,22 +47,6 @@ So far the following models are translatable:
 
 Start your server and you should see a TRANSLATIONS link or a flag icon on each
 admin section that supports this feature.
-
-There are two configs that allow users to customize which locales
-should be displayed as options on the translation forms and which should be
-listed to customers on the frontend. You can set them on an initializer. e.g.
-
-```ruby
-SpreeI18n::Config.available_locales = [:en, :es, :'pt-BR'] # displayed on frontend select box
-SpreeGlobalize::Config.supported_locales = [:en, :es, :'pt-BR'] # displayed on translation forms
-```
-
-NOTE for early adopters: `Spree::Globalize` namespace is now `SpreeGlobalize`
-
-PS. Please use symbols, not strings. e.g. `:'pt-BR'` not just `'pt-BR'`. Otherwise
-you may get unexpected errors
-
-Or if you prefer they're also available on the admin UI general settings section.
 
 *Every record needs to have a translation. If by any chance you remove `spree_globalize`
 from your Gemfile, add some records and then add `spree_globalize` gem back you might get

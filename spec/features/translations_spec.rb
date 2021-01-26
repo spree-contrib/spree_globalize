@@ -1,9 +1,7 @@
 # encoding: utf-8
 RSpec.feature "Translations" do
-  background do
-    reset_spree_preferences
-    SpreeI18n::Config.available_locales = [:en, :'pt-BR']
-    SpreeGlobalize::Config.supported_locales = [:en, :'pt-BR']
+  before do
+    Spree::Store.default.update!(default_locale: 'pt-BR')
   end
 
   context 'product' do
@@ -24,24 +22,14 @@ RSpec.feature "Translations" do
       )
     end
 
-    before do
-      I18n.locale = 'pt-BR'
-      Spree::Frontend::Config[:locale] = 'pt-BR'
-    end
-
     scenario 'displays translated product page' do
-      visit '/pt-BR/products/antimatter'
+      visit '/products/antimatter'
       expect(page.title).to have_content('Antimatéria')
     end
 
     scenario 'displays translated products list' do
-      visit '/pt-BR/products'
+      visit '/products'
       expect(page).to have_content('Antimatéria')
-    end
-
-    after do
-      I18n.locale = :en
-      Spree::Frontend::Config[:locale] = :en
     end
   end
 end

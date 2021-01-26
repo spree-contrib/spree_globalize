@@ -4,7 +4,8 @@
   display_locale_fields = function() {
     var attr, locale, locales, show, _fn, _i, _len;
     attr = $('#attr_list a.active').data('attr');
-    locales = $('#locale').val();
+    locale = $('#locale').val();
+    available_locales = $('#available_locales').val().split(',');
     show = $("select[name='show-only']").val();
     $('#attr_fields .panel').hide();
     _fn = function(locale) {
@@ -21,8 +22,9 @@
         return $('#attr_fields .panel.' + attr + '.' + locale).show();
       }
     };
-    for (_i = 0, _len = locales.length; _i < _len; _i++) {
-      locale = locales[_i];
+    if (locale === '') {
+      available_locales.forEach(function(locale) { _fn(locale) });
+    } else {
       _fn(locale);
     }
     if ($('#attr_fields .panel:visible').length === 0 && show !== 'all') {
@@ -36,9 +38,6 @@
       $(this).addClass('active');
       display_locale_fields();
       return false;
-    });
-    $('#locale, #supported_locales_').select2({
-      placeholder: Spree.translations['please_choose_language']
     });
     $('#locale').change(function() {
       return display_locale_fields();
