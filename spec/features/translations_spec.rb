@@ -1,11 +1,11 @@
 # encoding: utf-8
 RSpec.feature "Translations" do
   before do
-    Spree::Store.default.update!(default_locale: 'pt-BR')
+    Spree::Store.update_all(default_locale: 'pt-BR')
   end
 
   context 'product' do
-    let!(:store) { create(:store) }
+    let!(:store) { create(:store, default: true, default_locale: 'pt-BR', supported_locales: 'pt-BR') }
     let!(:product) do
       create(:product,
         name: 'Antimatter',

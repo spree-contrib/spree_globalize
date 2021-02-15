@@ -2,6 +2,10 @@
   <%= Spree.t(:editing_resource, resource: Spree::Store.model_name.human) %>
 <% end %>
 
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:back_to_resource_list, resource: Spree::Store.model_name.human), spree.admin_stores_path, class: 'btn-primary', icon: 'arrow-left' %>
+<% end %>
+
 <%= render 'settings' %>
 
 <div class="row translations">
@@ -9,12 +13,12 @@
     <%= render 'fields' %>
   </div>
   <div class="col-md-8">
-    <%= form_for [:admin, @resource], url: spree.admin_general_settings_path do |f| %>
+    <%= form_for [:admin, @store] do |f| %>
       <%= render 'form_fields', f: f %>
       <div class="form-actions" data-hook="buttons">
-        <%= button Spree.t('actions.update'), 'refresh', 'submit', {class: 'btn-success'} %>
+        <%= button Spree.t(:update), 'update' %>
         <span class="or"><%= Spree.t(:or) %></span>
-        <%= button_link_to Spree.t('actions.cancel'), spree.edit_admin_general_settings_path, icon: 'delete' %>
+        <%= button_link_to Spree.t(:cancel), spree.edit_admin_store_url(@store), icon: 'remove' %>
       </div>
     <% end %>
   </div>
