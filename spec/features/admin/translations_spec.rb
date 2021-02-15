@@ -23,7 +23,7 @@ RSpec.feature "Translations", :js do
         click_on "Update"
 
         visit spree.admin_translations_path('products', product.id)
-        select2 'Português (BR)', from: 'Select locale'
+        select2 'Português (pt-BR)', from: 'Select locale'
 
         expect(page).to have_selector("input[value='Geleia de perola']")
       end
@@ -57,7 +57,7 @@ RSpec.feature "Translations", :js do
         within("#attr_fields .presentation.pt-BR") { fill_in_name "tamanho" }
         click_on "Update"
         visit spree.admin_translations_path('option_types', option_type.id)
-        select2 'Português (BR)', from: 'Select locale'
+        select2 'Português (pt-BR)', from: 'Select locale'
         click_on 'Presentation'
 
         expect(page).to have_selector("input[value=tamanho]")
@@ -90,7 +90,7 @@ RSpec.feature "Translations", :js do
         click_on "Update"
 
         visit spree.admin_translations_path('option_types', option_type.id)
-        select2 'Português (BR)', from: 'Select locale'
+        select2 'Português (pt-BR)', from: 'Select locale'
         click_on 'Presentation'
 
         expect(page).to have_selector("input[value=grande]")
@@ -110,7 +110,7 @@ RSpec.feature "Translations", :js do
         within("#attr_fields .presentation.pt-BR") { fill_in_name "Modelo" }
         click_on "Update"
         visit spree.admin_translations_path('properties', property.id)
-        select2 'Português (BR)', from: 'Select locale'
+        select2 'Português (pt-BR)', from: 'Select locale'
 
         expect(page).to have_selector("input[value=Modelo]")
       end
@@ -128,7 +128,7 @@ RSpec.feature "Translations", :js do
       within("#attr_fields .name.pt-BR") { fill_in_name "Salve salve" }
       click_on "Update"
       visit spree.admin_translations_path('promotions', promotion.id)
-      select2 'Português (BR)', from: 'Select locale'
+      select2 'Português (pt-BR)', from: 'Select locale'
       expect(page).to have_selector("input[value='Salve salve']")
     end
 
@@ -153,7 +153,7 @@ RSpec.feature "Translations", :js do
       click_on "Update"
 
       visit spree.admin_translations_path('taxonomies', taxonomy.id)
-      select2 'Português (BR)', from: 'Select locale'
+      select2 'Português (pt-BR)', from: 'Select locale'
 
       expect(page).to have_selector("input[value=Guitarras]")
     end
@@ -181,7 +181,7 @@ RSpec.feature "Translations", :js do
       expect(taxonomy.root.children.count).to be(1)
 
       visit spree.admin_translations_path('taxons', taxon.id)
-      select2 'Português (BR)', from: 'Select locale'
+      select2 'Português (pt-BR)', from: 'Select locale'
 
       expect(page).to have_selector("input[value=Acusticas]")
     end
@@ -199,7 +199,7 @@ RSpec.feature "Translations", :js do
       click_on "Update"
 
       visit spree.admin_translations_path('shipping_methods', shipping_method.id)
-      select2 'Português (BR)', from: 'Select locale'
+      select2 'Português (pt-BR)', from: 'Select locale'
       expect(page).to have_selector("input[value='Entrega urgente']")
     end
 

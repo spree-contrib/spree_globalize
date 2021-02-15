@@ -16,7 +16,6 @@ language: ruby
 
 rvm:
   - 2.7
-  - 3.0
 
 env:
   - DB=mysql
