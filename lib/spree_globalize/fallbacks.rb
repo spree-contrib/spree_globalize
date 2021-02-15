@@ -20,7 +20,11 @@ module SpreeGlobalize
     #   { en: [:en, :de, :es], es: [:es, :de, :en] .. }
     #
     def self.config!
-      supported = Spree::Store.all.map(&:supported_locales_list).flatten.uniq
+      supported = if Spree::Store.respond_to?(:available_locales) && Spree::Store.available_locales.any?
+                    Spree::Store.available_locales
+                  else
+                    Config.supported_locales
+                  end
       default = I18n.default_locale
 
       Globalize.fallbacks = supported.inject({}) do |fallbacks, locale|
