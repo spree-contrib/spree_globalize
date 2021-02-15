@@ -18,7 +18,7 @@ Happy translating!
 Add the following to your `Gemfile`:
 
 ```ruby
-gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_i18n', '~> 5.0'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 ```
 
@@ -43,7 +43,7 @@ vendor/assets/javascripts/spree/backend/all.js
 This feature uses the [Globalize][3] gem to localize model data.
 So far the following models are translatable:
 
-    Product, Promotion, OptionType, Taxonomy, Taxon, Property and ShippingMethod.
+    Product, Promotion, OptionType, Taxonomy, Taxon, Property, Store and ShippingMethod.
 
 Start your server and you should see a TRANSLATIONS link or a flag icon on each
 admin section that supports this feature.
@@ -61,7 +61,7 @@ translations that do not exist.*
 
 ---
 
-Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. released under the [New BSD License][6]
+Copyright (c) 2010-2021 [Spree Commerce Inc.][1] and other [contributors][5]. released under the [New BSD License][6]
 
 [1]: http://spreecommerce.org
 [2]: http://guides.spreecommerce.org/developer/i18n.html
