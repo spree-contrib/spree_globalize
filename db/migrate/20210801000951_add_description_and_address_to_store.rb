@@ -2,11 +2,11 @@ class AddDescriptionAndAddressToStore < SpreeExtension::Migration[4.2]
   def change
     reversible do |dir|
       dir.up do
-        Spree::Store.add_translation_fields! description: :text, adress: :text
+        Spree::Store.add_translation_fields! description: :text, address: :text
       end
 
       dir.down do
-        remove_columns :spree_store_translations, :description, :adress
+        remove_columns :spree_store_translations, :description, :address
       end
     end
   end
