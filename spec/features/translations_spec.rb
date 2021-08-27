@@ -5,7 +5,7 @@ RSpec.feature "Translations" do
   end
 
   context 'product' do
-    let!(:store) { create(:store, default: true, default_locale: 'pt-BR', supported_locales: 'pt-BR') }
+    let!(:store) { create(:store, default: true, default_locale: 'pt-BR', supported_locales: 'pt-BR', url:'http://www.example.com') }
     let!(:product) do
       create(:product,
         name: 'Antimatter',
@@ -22,12 +22,12 @@ RSpec.feature "Translations" do
       )
     end
 
-    scenario 'displays translated product page' do
+    scenario 'displays translated product page', js: true do
       visit '/products/antimatter'
       expect(page.title).to have_content('Antimatéria')
     end
 
-    scenario 'displays translated products list' do
+    scenario 'displays translated products list', js: true do
       visit '/products'
       expect(page).to have_content('Antimatéria')
     end
