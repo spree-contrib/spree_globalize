@@ -1,4 +1,4 @@
-(function() {
+$( document ).on('turbo:load', function() {
   var display_locale_fields;
 
   display_locale_fields = function() {
@@ -32,19 +32,17 @@
     }
   };
 
-  $(function() {
-    $('#attr_list a').click(function() {
-      $('#attr_list a').removeClass('active');
-      $(this).addClass('active');
-      display_locale_fields();
-      return false;
-    });
-    $('#locale').change(function() {
-      return display_locale_fields();
-    });
-    return $("select[name='show-only']").change(function() {
-      return display_locale_fields();
-    });
+  $('#attr_list a').click(function() {
+    $('#attr_list a').removeClass('active');
+    $(this).addClass('active');
+    display_locale_fields();
+    return false;
+  });
+  $('#locale').change(function() {
+    return display_locale_fields();
+  });
+  return $("select[name='show-only']").change(function() {
+    return display_locale_fields();
   });
 
-}).call(this);
+});
