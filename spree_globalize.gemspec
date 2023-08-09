@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  spree_version =  '>= 4.2.0.rc5', '< 5.0'
+  spree_version =  '>= 4.2.0.rc5', '< 4.6'
   s.add_dependency 'spree_core', spree_version
   s.add_runtime_dependency 'spree_extension'
   s.add_runtime_dependency 'friendly_id-globalize'
