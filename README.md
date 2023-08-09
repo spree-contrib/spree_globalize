@@ -1,3 +1,7 @@
+# ⚠️ Deprecation notice ⚠️
+Since [Spree 4.6](https://github.com/spree/spree/releases/tag/v4.6.0) this extension is deprecated and not needed. Support for translations is now available in Spree core.
+
+
 # Spree Globalize
 
 [![Build Status](https://travis-ci.org/spree-contrib/spree_globalize.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_globalize)
